@@ -22,6 +22,12 @@ describe "Static pages" do
       visit '/static_pages/help'
       page.should have_content('Help')
     end
+
+    it "should have the right title" do
+      visit '/static_pages/help'
+      page.should have_selector('title',
+                    :text => "Help")
+    end
   end
 
   describe "About page" do
@@ -30,7 +36,25 @@ describe "Static pages" do
       visit '/static_pages/about'
       page.should have_content('About Us')
     end
+
+    it "should have the right title" do
+      visit '/static_pages/about'
+      page.should have_selector('title',
+                    :text => "About")
+    end
   end
 
+  describe "Contact" do
+
+    it "should have the content 'Contact'" do
+      visit '/static_pages/contact'
+      page.should have_content('Contact')
+    end
+    it "should have the right title" do
+      visit '/static_pages/contact'
+      page.should have_selector('title',
+                    :text => "Contact")
+    end
+  end
 
 end
