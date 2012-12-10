@@ -7,4 +7,10 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
+  def contact
+  end
+  def greensacks
+    #render 'greensacks', :layout => 'white'
+  end
 end
